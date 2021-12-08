@@ -31,6 +31,7 @@ export default class Migration implements MigrationIndexSignature {
       await this.connection?.close();
       return result;
     } catch (error) {
+      await this.connection?.close();
       throw error;
     }
   }
@@ -43,6 +44,7 @@ export default class Migration implements MigrationIndexSignature {
       });
       await this.connection?.close();
     } catch (error) {
+      await this.connection?.close();
       throw error;
     }
   }
