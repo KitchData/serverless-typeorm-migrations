@@ -43,6 +43,7 @@ export function getConnectionOptions(logger: (message: string) => void): Connect
     type: process.env.SLS_TYPEORM_MIGRATIONS_ENGINE as any,
     url: process.env.SLS_TYPEORM_MIGRATIONS_DATABASE_URL,
     migrations: [process.env.SLS_TYPEORM_MIGRATIONS_FOLDER],
+    entities: [process.env.SLS_TYPEORM_ENTITIES_FOLDER],
     ...dbOptions,
   };
 }
